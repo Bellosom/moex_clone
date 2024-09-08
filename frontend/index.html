@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Открытый интерес.рф</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-field special">
+                <img src="open.png" alt="My Image">
+            </div>
+            <div class="header-field link">
+                <a href="FAQ.html" class="link">FAQ</a>
+            </div>
+            <div class="header-field"></div>
+        </header>
+
+        <div class="main-content">
+            <div class="chart-container">
+                <div id="no-data-message">Выберите данные для отображения графика</div>
+                <canvas id="myChart"></canvas>
+            </div>
+            <div class="options-container">
+                <div class="field-5" id="field-5-1">
+                    <div class="options-title">· Выберите категорию ·</div>
+                    <div class="category-buttons">
+                        <button onclick="showFutures('indices')">Индексы</button>
+                        <button onclick="showFutures('stocks')">Акции</button>
+                        <button onclick="showFutures('currencies')">Валюты</button>
+                        <button onclick="showFutures('commodities')">Товары</button>
+                        <button onclick="showFutures('others')">Другое</button>
+                    </div>
+                </div>
+                <div class="field-5" id="field-5-2">
+                    <div class="options-title">· Выберите инструмент ·</div>
+                    <div class="futures-container" id="futures-container"></div>
+                </div>
+                <div class="field-5" id="field-5-3" style="display: none;">
+                    <div class="options-title">· Выберите сторону участников ·</div>
+                    <div class="radio-group" id="person-type-container">
+                        <label>
+                            <input type="radio" name="type" value="physical" onclick="showOptions('physical')"> Физические лица
+                        </label>
+                        <br>
+                        <label>
+                            <input type="radio" name="type" value="legal" onclick="showOptions('legal')"> Юридические лица
+                        </label>
+                    </div>
+                </div>
+                <div class="field-5" id="field-5-4" style="display: none;">
+                    <div class="options-title">· Выберите отображаемые данные ·</div>
+                    <div class="chartchange" id="chart-buttons"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+<footer>
+     <div class="footer-content">
+       <p>© Все права защищены</p> 
+     </div>
+   </footer>
+
+</body>
+</html>

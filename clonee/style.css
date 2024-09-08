@@ -1,0 +1,162 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #eceeee;
+    height: 100vh;
+    overflow: hidden; /* Prevent scrollbars */
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.header-field {
+    /* Убрана обводка для .header-field */
+    padding: 10px;
+    margin-right: 10px;
+    flex: 1;
+    text-align: center;
+}
+
+.header-field.special {
+    flex: 2;
+}
+
+.header-field img {
+    width: 100%;
+    height: auto;
+}
+
+.header-field.link {
+    font-family: 'Franklin Gothic Demi', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: left;
+}
+
+.link {
+    text-decoration: none;
+    color: rgb(130, 197, 226);
+}
+
+.link:hover {
+    color: darkgray;
+}
+
+.main-content {
+    display: flex;
+    flex: 1;
+    overflow: hidden; /* Prevent content overflow */
+}
+
+.chart-container {
+    flex: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 70%; /* Constrain chart container width */
+    height: 100%;
+    padding: 10px; /* Add padding around chart */
+    box-sizing: border-box; /* Include padding in width calculation */
+    position: relative; /* To position the message absolutely */
+}
+
+.chart-container #no-data-message {
+    position: absolute;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.chart-container canvas {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.options-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    max-width: 30%; /* Constrain options container width */
+}
+
+.field-5 {
+    border: 2px dashed rgb(0, 0, 0); /* Если нужно оставить обводку для .field-5 */
+    padding: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    overflow-y: auto; 
+    max-height: calc(100% - 20px); /* Adjust based on margin */
+}
+
+.options-title {
+    margin-bottom: 10px; /* Add space below the title */
+    font-weight: bold;
+}
+
+.category-buttons,
+.futures-container,
+.chartchange {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.category-buttons button,
+.chartchange button {
+    flex: 1;
+    padding: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #e0e0e0;
+    border: none;
+    border-radius: 5px;
+}
+
+.futures-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.futures-container button {
+    flex: 0 0 calc(50% - 10px); /* Two buttons per row with a gap */
+    padding: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #e0e0e0;
+    border: none;
+    border-radius: 5px;
+}
+
+.radio-group {
+    text-align: start;
+    display: flex;
+    justify-content: space-between; /* Распределение кнопок по краям блока */
+    gap: 20px; /* Оставляем промежуток между элементами */
+    width: 100%; /* Убедитесь, что контейнер занимает всю доступную ширину */
+}
+
+.radio-group label {
+    margin-bottom: 0; /* Убираем нижний отступ для горизонтального выравнивания */
+    flex: 1; /* Разделяем доступное пространство между элементами */
+    text-align: center; /* Выравниваем текст по центру */
+}   
